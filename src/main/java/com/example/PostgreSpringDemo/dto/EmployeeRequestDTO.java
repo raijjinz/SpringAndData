@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 public class EmployeeRequestDTO {
     private Long id;
     private String name;
+    private String code;
     private DepartmentRequestDTO department;
     //private String departmentName;
 }
