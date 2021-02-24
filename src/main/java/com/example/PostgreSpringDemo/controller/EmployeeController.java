@@ -8,6 +8,8 @@ import com.example.PostgreSpringDemo.service.impl.EmployeeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/employee")
 public class EmployeeController {
@@ -22,9 +24,9 @@ public class EmployeeController {
 
     //GET - /employee/{id}
 
-    @GetMapping("/{id}")
-    public EmployeeResponseDTO getEmployeeById(@PathVariable ("id") Long id){
-        return employeeService.getEmployeeById(id);
+    @GetMapping("department/{id}")
+    public List<EmployeeResponseDTO> getEmployeeById(@PathVariable ("id") Long departmentId){
+        return employeeService.getEmployeeListByDepartment(departmentId);
     }
 
     //PUT - /employee/{id}
